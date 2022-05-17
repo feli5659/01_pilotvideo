@@ -7,63 +7,82 @@ html {
   font-size: 16px;
   background-color: #b9d2bd;
 }
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  align-content: center;
+}
 
-img,
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 video {
   width: 100%;
   height: auto;
   display: block;
+
+  padding-block: 20px;
 }
 @font-face {
   font-family: ms madi;
   src: url("fonts/msmadi-regular-webfont.woff2") format(woff2);
 }
 @font-face {
-  font-family: bebas;
-  src: url("fonts/bebasneue-regular-webfont.woff2") format(woff2);
+  font-family: dinbold;
+  src: url("fonts/din-bold-webfont.woff2") format(woff2);
 }
 
-/* forside billede */
-.splash {
-  max-width: none;
-  width: 100%;
-  height: 100vh;
-  background-image: url(tiago_gradient.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+/* mobile first */
+h1 {
+  font-size: 5rem;
+  font-family: Geneva, Tahoma, sans-serif;
+  line-height: 0.89;
+  margin-left: 20px;
+  color: white;
 }
-main {
-  margin: 20px;
-}
-nav ul {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-between;
+
+h2 {
+  font-size: 1rem;
+  font-family: Geneva, Tahoma, sans-serif;
+  margin-block: 10px;
+  margin-left: 20px;
+  color: white;
 }
 
 .titel1 {
-  font-size: 10rem;
+  font-size: 7rem;
   font-family: Geneva, Tahoma, sans-serif;
   line-height: 0.89;
-  margin-top: 70px;
   color: white;
-  grid-column: 1 / span 1;
 }
 
 .titel2 {
   font-family: Geneva, Tahoma, sans-serif;
-  font-size: 3.5rem;
-  letter-spacing: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 1rem;
   margin-left: 20px;
   color: white;
+  grid-column: 1 / span 2;
 }
+
 .titel3 {
-  font-size: 20rem;
-  font-family: ms madi;
+  font-family: ms madi, Geneva, Tahoma, sans-serif;
+  font-size: 10rem;
+  margin-top: 0%;
+  margin-left: 20px;
+  grid-column: 1 / span 2;
+}
+.grid_2 {
+  display: grid;
+}
+.copy {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+.billede1 {
+  padding-block: 10px;
 }
 
 p {
@@ -72,15 +91,171 @@ p {
   margin-left: 20px;
   color: white;
 }
-q {
-  font-family: Geneva, Tahoma, sans-serif;
-  font-size: 2rem;
-  margin-left: 20px;
+
+footer {
+  font-family: Geneva, Tahoma, sans-serif, "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 80px;
+  position: sticky;
+  /* top: 100vh; */
   color: white;
 }
 
+/* gallery */
+.gallery {
+  display: grid;
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+.landscape {
+  grid-column: 1 / span 2;
+}
+.portrait {
+  grid-row: 2 / span1;
+}
+.image2 {
+  grid-column: 1 / span1;
+}
+
+.image3 {
+  grid-column: 2 / span1;
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  .splash {
+    max-width: none;
+    width: 100%;
+    height: 100vh;
+    background-image: url(tiago_gradient2.png);
+    background-repeat: no-repeat;
+    margin: 0;
+    background-size: cover;
+  }
+
+  .overtitel {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  h1 {
+    font-size: 7rem;
+    font-family: Geneva, Tahoma, sans-serif;
+    line-height: 0.89;
+    margin-left: 20px;
+    color: white;
+  }
+
+  .titel1 {
+    font-size: 10rem;
+    font-family: Geneva, Tahoma, sans-serif;
+    line-height: 0.89;
+    color: white;
+  }
+
+  .titel2 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 1.5rem;
+    margin-left: 20px;
+    color: white;
+    grid-column: 1 / span 2;
+  }
+
+  .titel3 {
+    font-family: ms madi, Geneva, Tahoma, sans-serif;
+    font-size: 13rem;
+    margin-top: 0%;
+    margin-left: 20px;
+    grid-column: 8 / span 2;
+  }
+  .grid_2 {
+    display: grid;
+  }
+  .copy {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  p {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    margin-left: 20px;
+    color: white;
+    padding-block: 10px;
+  }
+  .billede1 {
+    display: none;
+  }
+
+  /* video grid */
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 10px;
+  }
+
+  .col2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .col3 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* gallery */
+
+  .gallery {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .gallery img {
+    object-fit: cover;
+  }
+
+  .image2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .image1 {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+  }
+
+  .image3 {
+    grid-column: 4 / span 1;
+    grid-row: 1;
+  }
+  .image4 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+  .image5 {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 iframe {
   width: 100%;
   height: auto;
-  aspect-ration: 16/9;
+  aspect-ratio: 16/9;
+  padding-top: 20px;
 }
